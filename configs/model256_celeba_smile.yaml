@@ -1,0 +1,50 @@
+# Model configuration.
+c_dim: 1
+celeba_crop_size: 178
+image_size: 128
+g_conv_dim: 64
+d_conv_dim: 64
+g_repeat_num: 6
+g_repeat_num2: 12
+d_repeat_num: 6
+lambda_cls: 1
+lambda_rec: 10
+lambda_gp: 10
+lambda_tv: 0.0
+lambda_mask: 1
+lambda_low: 0.4
+coff: 0.1
+
+# Train configuration.
+batch_size: 16
+num_iters_stage1: 100000
+num_iters_stage2: 200000
+num_iters_decay: 100000
+g_lr: 0.0001
+d_lr: 0.0001
+d2_lr: 0.0001
+n_critic: 5
+beta1: 0.5
+beta2: 0.999
+selected_attrs: ['Smiling']
+
+# Miscellaneous.
+num_workers: 1
+use_tensorboard: True
+
+# Directories.
+celeba_image_dir: data/celeba/images
+attr_path: data/celeba/list_attr_celeba.txt
+
+# Step size
+log_step: 20
+sample_step: 1000
+model_save_step: 10000
+lr_update_step: 1000
+
+# high resolution parameters
+celebahq_image_dir: data/celeba_hq256/images
+hq_attr_path: data/celeba_hq256/list_attr_celeba.txt
+celebahq_crop_size: 256
+hq_image_size: 256
+hq_batch_size: 8
